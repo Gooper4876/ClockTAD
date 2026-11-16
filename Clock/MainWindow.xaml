@@ -1,0 +1,31 @@
+﻿<Window x:Class="Clock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clock"
+        mc:Ignorable="d"
+        Title="Zegar" Height="450" Width="800">
+    <Grid  Background="#FF6EF997">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!--clock-->
+            <RowDefinition Height="*"/> <!--buttons-->
+            <RowDefinition Height="*"/> <!--result-->
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" RowDefinitions="Auto,*" Width="Auto">
+            <TextBlock Grid.Row="0" x:Name="HourLabel" Text="time" FontSize="40" HorizontalAlignment="Center" FontFamily="Comic Sans MS" />
+            <TextBlock Grid.Row="1" x:Name="DateLabel" Text="hi" FontSize="40" HorizontalAlignment="Center" FontFamily="Comic Sans MS"/>
+        </Grid>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+            <ListBox HorizontalAlignment="Stretch"  Height="Auto" x:Name="LocationList" SelectionChanged="LocationList_Selected" Background="#FF6EF997" HorizontalContentAlignment="Center">
+                <TextBlock Selector.IsSelected="True" TextAlignment="Center">Pogoda: Warszawa</TextBlock>
+                <TextBlock TextAlignment="Center">Pogoda: Gdańsk</TextBlock>
+            </ListBox>
+        </Grid>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock x:Name="ResultLabel" Text="Result" HorizontalAlignment="Center" FontFamily="Comic Sans MS" Height="Auto" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>
